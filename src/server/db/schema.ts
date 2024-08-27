@@ -2,13 +2,7 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { sql } from "drizzle-orm";
-import {
-  index,
-  pgTable,
-  serial,
-  timestamp,
-  varchar,
-} from "drizzle-orm/pg-core";
+import { index, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -17,11 +11,22 @@ import {
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
 
-export const posts = pgTable(
-  "post",
+export const songs = pgTable(
+  "songs",
   {
-    id: serial("id").primaryKey(),
-    name: varchar("name", { length: 256 }),
+    id: serial("id").notNull().primaryKey(),
+    userId: text("user_id").notNull(),
+    track: text("track").notNull(),
+    artist: text("artist").notNull(),
+    fullLyrics: text("full_lyrics").notNull(),
+    chunkedLyrics: text("chunked_lyrics")
+      .array()
+      .notNull()
+      .default(sql`'{}'::text[]`),
+    chunkedTranslations: text("chunked_translations")
+      .array()
+      .notNull()
+      .default(sql`'{}'::text[]`),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
@@ -29,7 +34,7 @@ export const posts = pgTable(
       () => new Date(),
     ),
   },
-  (example) => ({
-    nameIndex: index("name_idx").on(example.name),
+  (song) => ({
+    idIndex: index("song_idx").on(song.id),
   }),
 );

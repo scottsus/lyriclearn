@@ -17,7 +17,10 @@
   "dependencies": {
     "@ai-sdk/openai": "^0.0.50",
     "@clerk/nextjs": "^5.3.3",
+    "@hookform/resolvers": "^3.9.0",
+    "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@spotify/web-api-ts-sdk": "^1.2.0",
     "@t3-oss/env-nextjs": "^0.10.1",
     "ai": "^3.3.12",
     "class-variance-authority": "^0.7.0",
@@ -30,11 +33,12 @@
     "postgres": "^3.4.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.0",
     "react-loader-spinner": "^6.1.6",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.23.3"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",

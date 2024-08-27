@@ -20,6 +20,7 @@ const config = {
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/require-await": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/prefer-optional-chain": "off",
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/no-unsafe-call": "off",

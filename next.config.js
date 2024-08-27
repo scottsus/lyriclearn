@@ -6,7 +6,9 @@ await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
 const config = {
-  experimental: {},
+  images: {
+    domains: ["i.scdn.co"], // Spotify thumbnails
+  },
 };
 
 export default config;

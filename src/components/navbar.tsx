@@ -1,21 +1,17 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import Image from "next/image";
 import Link from "next/link";
-import github from "public/github.svg";
 
 import { Button } from "./ui/button";
 
 export function Navbar() {
   return (
-    <div className="flex w-5/6 items-center justify-between p-6">
+    <nav className="flex h-16 w-5/6 items-center justify-between border-b border-b-foreground/10">
       <Link
-        className="cursor-pointer transition-all hover:opacity-80"
-        href="https://github.com/scottsus/"
-        target="_blank"
+        href="/"
+        className="text-m flex w-full max-w-4xl items-center justify-between p-3 font-bold"
       >
-        <Image src={github} alt="GitHub" width={50} height={50} />
+        Lyric Learn
       </Link>
-
       <SignedOut>
         <SignInButton>
           <Button>Sign In</Button>
@@ -24,6 +20,6 @@ export function Navbar() {
       <SignedIn>
         <UserButton />
       </SignedIn>
-    </div>
+    </nav>
   );
 }

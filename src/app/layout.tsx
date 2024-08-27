@@ -4,12 +4,16 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Footer } from "~/components/footer";
 import { Navbar } from "~/components/navbar";
 import { GeistSans } from "geist/font/sans";
-import { type Metadata } from "next";
 import { Toaster } from "sonner";
 
-export const metadata: Metadata = {
-  title: "Some Title",
-  description: "Some description",
+const defaultUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "http://localhost:3000";
+
+export const metadata = {
+  metadataBase: new URL(defaultUrl),
+  title: "Lyric Learn",
+  description: "Learn languages through lyrics.",
   icons: [{ rel: "icon", url: "/github.svg" }],
 };
 

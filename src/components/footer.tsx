@@ -2,18 +2,27 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <div className="mb-0 mt-auto flex h-28 items-center">
-      <p className="text-gray-500">
+    <footer className="mb-0 mt-auto flex w-full justify-center border-t border-t-foreground/10 p-8">
+      <p className="text-center text-xs">
         Built by{" "}
         <Link
-          href="https://github.com/scottsus"
-          className="text-black underline-offset-2 transition-all hover:underline"
+          href="https://wilsonlimsetiawan.com/"
           target="_blank"
+          className="font-bold hover:underline"
+          rel="noreferrer"
+        >
+          WilsonLimSet
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="https://www.github.com/scottsus/"
+          target="_blank"
+          className="font-bold hover:underline"
+          rel="noreferrer"
         >
           @scottsus
-        </Link>{" "}
-        in San Francisco.
+        </Link>
       </p>
-    </div>
+    </footer>
   );
 }
